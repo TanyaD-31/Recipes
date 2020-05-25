@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RecipesXamarin.Pages.RecipeEditPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TableView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Intent="Form" HasUnevenRows="true">
+                <TableSection Title="General">
+                    <EntryCell x:Name="recipeNameCell" Label="Name" />
+                </TableSection>
+
+                <TableSection Title="Ingredients">
+                    <ViewCell>
+                        <StackLayout Padding="15">
+                            <Editor x:Name="ingredientsCell" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+
+                <TableSection Title="Directions">
+                    <ViewCell>
+                        <StackLayout Padding="15">
+                            <Editor x:Name="directionsCell" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+
+            <Button Text="Save" Grid.Row="1" Grid.Column="0" x:Name="saveButton" BackgroundColor="#EE3F60" TextColor="White" />
+            <Button Text="Delete" Grid.Row="1" Grid.Column="1" x:Name="deleteButton" BackgroundColor="#000000" TextColor="White" />
+            <Button Text="Cancel" Grid.Row="1" Grid.Column="2" x:Name="cancelButton" BackgroundColor="#4CC7F2" TextColor="White" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
